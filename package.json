@@ -5,10 +5,11 @@
   "author": "Victor Martins Dias <victormartinsjob@gmail.com> (https://github.com/VictorMartinsD)",
   "description": "Breve descrição do projeto",
   "type": "module",
-  "main": "src/server.js",
+  "main": "dist/server.js",
   "scripts": {
-    "dev": "node --watch src/server.js",
-    "start": "node src/server.js",
+    "dev": "tsx watch src/server.ts",
+    "build": "tsc -p ts.config.json --outDir dist",
+    "start": "node dist/server.js",
     "lint": "eslint .",
     "lint:fix": "eslint . --fix",
     "test": "echo \"No tests configured\"",
@@ -17,18 +18,25 @@
     "prepare": "husky"
   },
   "lint-staged": {
-    "**/*.js": [
+    "**/*.{js,mjs,ts}": [
       "eslint --fix",
       "prettier --write"
     ]
   },
   "devDependencies": {
     "@eslint/js": "^10.0.1",
+    "@types/express": "^4.17.25",
+    "@types/node": "^26.6.5",
     "eslint": "^10.3.0",
     "eslint-config-prettier": "^10.1.8",
     "globals": "^17.6.0",
     "husky": "^9.1.7",
     "lint-staged": "^16.2.7",
-    "prettier": "latest"
+    "prettier": "latest",
+    "tsx": "^4.16.2",
+    "typescript": "^7.0.2"
+  },
+  "dependencies": {
+    "express": "^5.3.0"
   }
 }
