@@ -8,7 +8,7 @@
   "main": "dist/server.js",
   "scripts": {
     "dev": "tsx watch src/server.ts",
-    "build": "tsc -p ts.config.json --outDir dist",
+    "build": "rimraf dist && tsc -p ts.config.json --outDir dist",
     "start": "node dist/server.js",
     "lint": "eslint .",
     "lint:fix": "eslint . --fix",
@@ -33,6 +33,7 @@
     "husky": "^9.1.7",
     "lint-staged": "^16.2.7",
     "prettier": "latest",
+    "rimraf": "^6.1.3",
     "tsx": "^4.16.2",
     "typescript": "^7.0.2"
   },
