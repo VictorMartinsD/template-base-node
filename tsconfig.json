@@ -1,28 +1,29 @@
 {
   "compilerOptions": {
-    "outDir": "./dist",
-    "rootDir": "./src",
-
-    // Environment Settings
+    "target": "ES2024",
+    "lib": ["ES2024"],
     "module": "nodenext",
-    "target": "esnext",
+    "moduleResolution": "nodenext",
     "types": ["node", "express"],
 
-    // Other Outputs
+    "paths": {
+      "@/*": ["./src/*"]
+    },
+
+    "rootDir": "./src",
+    "outDir": "./dist",
+    "noEmit": false,
+
     "sourceMap": true,
     "declaration": true,
     "declarationMap": true,
 
-    // Stricter Typechecking Options
+    "esModuleInterop": true,
+    "forceConsistentCasingInFileNames": true,
+    "strict": true,
     "noUncheckedIndexedAccess": true,
     "exactOptionalPropertyTypes": true,
-
-    // Recommended Options
-    "strict": true,
-    "jsx": "react-jsx",
-    "verbatimModuleSyntax": true,
     "isolatedModules": true,
-    "noUncheckedSideEffectImports": true,
     "moduleDetection": "force",
     "skipLibCheck": true
   }
